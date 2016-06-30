@@ -1,0 +1,30 @@
+id: dcz_d6_term_node_revision
+label: Term/node relationship revisions
+migration_group: dcz6_term_node
+migration_tags:
+  - Drupal 6
+builder:
+  plugin: dcz_d6_term_node
+source:
+  plugin: dcz_d6_term_node_revision
+process:
+  vid:
+    -
+      plugin: migration
+      migration: dcz_d6_node:*
+      source: vid
+    -
+      plugin: skip_on_empty
+      method: row
+  # Zakomentovano, protoze nemame mapovani pres migraci a museli bychom opakovat
+  # statickou mapu z jinych yml
+  # type: type
+  # The actual field name is dynamic and will be added by the builder.
+  field_tags: tids
+  taxonomy_forums: tids
+destination:
+  plugin: entity_revision:node
+migration_dependencies:
+  required:
+    - dcz_d6_term_node:*
+    - dcz_d6_node_revision:*

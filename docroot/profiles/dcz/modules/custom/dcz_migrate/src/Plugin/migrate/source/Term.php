@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\dcz_migrate\Plugin\migrate\source\TermNode.
+ * Contains \Drupal\dcz_migrate\Plugin\migrate\source\Term.
  */
 
 namespace Drupal\dcz_migrate\Plugin\migrate\source;
